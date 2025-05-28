@@ -13,7 +13,7 @@ const router=createBrowserRouter(
       path:"/",
       element:
       <div>
-        <Navbar/>
+       
         <LandingPage/>
       </div>
     },
@@ -21,6 +21,7 @@ const router=createBrowserRouter(
       path:"/dashboard",
       element:
       <div>
+          <Navbar/>
           <Dashboard/>
       </div>
     },
