@@ -1,9 +1,17 @@
 import React from 'react'
+import Boxes from './Boxes'
 
 const Dashboard = () => {
   return (
-    <div className='bg-black'>
-        
+    <div className='h-screen bg-black '>
+
+      <div className='w-full flex justify-evenly p-6'>
+        <Boxes/>
+        <Boxes/>
+        <Boxes/>
+        <Boxes/>
+      </div>
+      
     </div>
   )
 }
