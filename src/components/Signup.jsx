@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Login = () => {
+const Signup = () => {
   return (
     <div className='h-screen bg-black flex flex-col justify-center items-center'>
         
         <section className='bg-black  rounded-2xl w-xl p-5  flex flex-col justify-center items-center'>
             <h1 className=" text-white text-3xl font-semibold ">
-              Welcome Back
+              Create Your Account
             </h1>
 
             <button className='border border-[#00FF94] w-xs  rounded-xl text-[#00FF94]  p-2 my-4 bg-[#111111] cursor-pointer text-xs'>
@@ -21,16 +21,17 @@ const Login = () => {
             
             <input type="email" placeholder='Email' className='placeholder:text-xs text-sm border border-[#1F2937] w-xs  rounded-xl text-[#9CA3AF]  p-2 my-2 bg-[#111111] focus:outline-none'/>
             <input type="password" placeholder='Password' className='placeholder:text-xs text-sm  border border-[#1F2937] w-xs  rounded-xl text-[#9CA3AF]  p-2 my-2 bg-[#111111] focus:outline-none'/>
+            <input type="password" placeholder='Confirm Password' className='placeholder:text-xs text-sm  border border-[#1F2937] w-xs  rounded-xl text-[#9CA3AF]  p-2 my-2 bg-[#111111] focus:outline-none'/>
 
             <button className='text-white bg-[linear-gradient(90deg,_#B026FF_0%,_#00FF94_100%)] h-10 w-24 rounded-xl mt-5 cursor-pointer text-xs'>
-              Sign Up
+              Create Account
             </button>
 
             <p className='text-white text-xs mt-3'>
-              Dont Have an account ? {" "}
+              Already Have an account ? {" "}
               <span className='text-[#00FF94]'>
                 <a href="#">
-                  Create One
+                  Login
                 </a>
               </span>
             </p>
@@ -42,4 +43,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup
