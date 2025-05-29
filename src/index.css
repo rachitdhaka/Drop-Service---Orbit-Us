@@ -1,11 +1,23 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
-
-body {
-  @apply font-space-grotesk;
+@font-face {
+    font-family: Maga;
+    src: url("../src/assets/fonts/Fontspring-DEMO-magazinegrotesque-regular.otf");
 }
+@font-face {
+    font-family: Martin;
+    src: url(../src/assets/fonts/Aston\ Martin\ Sans.ttf);
+}
+
+@font-face {
+    font-family: Saans;
+    src: url(../src/assets/fonts/saans-font.woff2);
+}
+
+
 @theme{
-  --font-space-grotesk:'Space Grotesk','sans-serif'
-  
+    --font-maga:Maga , "sans-serif";
+    --font-schelter:Schelter Grotesk NF , "san-serif";
+    --font-martin:Martin,"san-serif";
+    --font-saans:Saans,"san-serif";
 }
 

@@ -18,7 +18,7 @@ const Dashboard = () => {
       
 
       {/* Jobs part */}
-      <p className="text-white  ml-10 text-[24px]">Recents Jobs </p>
+      <p className="text-white  ml-10 text-[24px] font-maga">Recents Jobs </p>
 
 
       <div className="w-full flex justify-center p-4 ">
@@ -34,7 +34,7 @@ const Dashboard = () => {
 
 
       {/* Cateroiry part */}
-      <p className="text-white  ml-10 text-[24px]">Trending Categories </p>
+      <p className="text-white  ml-10 text-[24px] font-maga">Trending Categories </p>
 
 
       <div className="w-full flex justify-center items-center py-5">

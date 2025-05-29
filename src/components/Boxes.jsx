@@ -13,8 +13,8 @@ const Boxes = () => {
 
             {/* rightside text div */}
             <div className='w-[80%] h-full bg-[#111111] pl-2 flex flex-col  '>
-                <p className='text-md text-[#9CA3AF] font-Geist font-light'>Total Jobs</p>
-                <h1 className='text-white text-2xl font-Geist font-light'>1234</h1>
+                <p className='text-md text-[#9CA3AF] font-Geist font-light font-martin'>Total Jobs</p>
+                <h1 className='text-white text-2xl font-Geist font-light font-martin'>1234</h1>
             </div>
         </div>
     </div>

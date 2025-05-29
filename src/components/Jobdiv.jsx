@@ -8,13 +8,13 @@ const Jobdiv = () => {
         {/* top line , full time and price  */}
       <div className='w-full px-4 py-2 flex justify-between'>
         <div>
-          <p className='bg-[#B026FF]/20 inline-block text-[#B026FF] text-sm px-3 py-2 rounded-full'>
+          <p className='bg-[#B026FF]/20 inline-block text-[#B026FF] text-sm px-3 py-2 rounded-full font-maga'>
             Full Time
           </p>
         </div>
 
         <div className='flex justify-center items-center'>
-            <p className='text-[#00FF94]'>
+            <p className='text-[#00FF94] font-maga'>
                 2.5 ETH
             </p>
         </div>
@@ -24,12 +24,12 @@ const Jobdiv = () => {
 
 
       {/* title  */}
-      <div className='text-white text-xl pl-5 pt-2'>
+      <div className='text-white text-xl pl-5 pt-2 font-martin'>
         Senior Rust Developer 
       </div>
 
       {/* company  */}
-      <div className='text-[#9CA3AF] pl-5'>
+      <div className='text-[#9CA3AF] pl-5 font-martin'>
         BlockChain Labs 
       </div>
     </div>
