@@ -1,10 +1,11 @@
 import './App.css'
 import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router";
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Login from './pages.jsx/Login';
+import Signup from './pages.jsx/Signup';
 import LandingPage from './components/LandingPage';
-import Dashboard from './components/Dashboard';
+import Dashboard from './pages.jsx/Dashboard';
 import Navbar from './components/Navbar';
+import CreateJob from './pages.jsx/CreateJob';
 
 
 const router=createBrowserRouter(
@@ -38,7 +39,16 @@ const router=createBrowserRouter(
       <div>
         <Signup/>
       </div>
-    }
+    },
+    {
+      path:"/create",
+      element:
+      <div>
+        <Navbar/>
+        <CreateJob/>
+      </div>
+    },
+    
 
   ]
 )

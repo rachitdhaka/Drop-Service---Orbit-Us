@@ -1,7 +1,8 @@
 import React from "react";
-import { IconBellRinging } from '@tabler/icons-react';
-import { IconSearch } from '@tabler/icons-react';
-import { IconUserCircle } from '@tabler/icons-react';
+import { IconBellRinging } from "@tabler/icons-react";
+import { IconSearch } from "@tabler/icons-react";
+import { IconUserCircle } from "@tabler/icons-react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -17,23 +18,28 @@ const Navbar = () => {
         </div>
       </div>
 
-
-
       <div className="flex gap-3 ">
-        {/* notification Icon */}
-        <div className="flex justify-center items-center">
-          <IconBellRinging stroke={1} color="white" />
-        </div>
+        {/* create job button  */}
+        <NavLink to="/create" >
+          <button className="   rounded-xl text-white bg-[#111111] p-3 cursor-pointer text-xs font-mag">
+            Create Job
+          </button>
+        </NavLink>
+
         {/* Connect wallet button */}
         <div>
-          <button className="   rounded-xl text-white  p-2  bg-[#111111] p-3 cursor-pointer text-xs">
-          Connect Wallet
-        </button>
+          <button className="   rounded-xl text-white bg-[#111111] p-3 cursor-pointer text-xs font-mag">
+            Connect Wallet
+          </button>
         </div>
 
         {/* Profile section */}
         <div className="flex justify-center items-center">
           <IconUserCircle stroke={1} color="white" />
+        </div>
+        {/* notification Icon */}
+        <div className="flex justify-center items-center">
+          <IconBellRinging stroke={1} color="white" />
         </div>
       </div>
     </nav>
@@ -41,3 +47,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

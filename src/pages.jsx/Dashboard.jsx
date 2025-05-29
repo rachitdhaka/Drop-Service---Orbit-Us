@@ -1,7 +1,7 @@
 import React from "react";
-import Boxes from "./Boxes";
-import Jobdiv from "./Jobdiv";
-import Categories from "./Categories";
+import Boxes from "../components/Boxes";
+import Jobdiv from "../components/Jobdiv";
+import Categories from "../components/Categories";
 
 const Dashboard = () => {
   return (
