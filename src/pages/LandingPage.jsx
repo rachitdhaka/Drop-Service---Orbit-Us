@@ -95,7 +95,8 @@ const LandingPage = () => {
               Connect with top talent worldwide on a secure, decentralized platform. 
               Smart contracts ensure fair payments and transparent transactions.
             </motion.p>
-            
+             
+             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
