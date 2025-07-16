@@ -1,20 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Wallet, Home, Star, Info, MessageCircle } from 'lucide-react';
+import { Menu, X, Home, Star, Info, MessageCircle, Briefcase, User, Plus } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import WalletButton from './WalletButton';
+import { useWallet } from '../contexts/WalletContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { isConnected } = useWallet();
 
   const navigation = [
-    { name: 'Home', href: '/landing', icon: Home, current: location.pathname === '/landing' },
+    { name: 'Home', href: '/', icon: Home, current: location.pathname === '/' },
     { name: 'Features', href: '#features', icon: Star, current: false },
-    { name: 'About', href: '/about', icon: Info, current: location.pathname === '/about' },
-    { name: 'Contact', href: '/contact', icon: MessageCircle, current: location.pathname === '/contact' },
+    { name: 'About', href: '#about', icon: Info, current: location.pathname === '/about' },
+    { name: 'Contact', href: '#contact', icon: MessageCircle, current: location.pathname === '/contact' },
   ];
+
+  // Add protected routes when wallet is connected
+  const protectedNavigation = [
+    { name: 'Dashboard', href: '/dashboard', icon: Briefcase, current: location.pathname === '/dashboard' },
+    { name: 'Create Job', href: '/create-job', icon: Plus, current: location.pathname === '/create-job' },
+    { name: 'Profile', href: '/profile', icon: User, current: location.pathname === '/profile' },
+  ];
+
+  const currentNavigation = isConnected ? protectedNavigation : navigation;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +78,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
-            {navigation.map((item, index) => (
+            {currentNavigation.map((item, index) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -10 }}
@@ -113,17 +125,13 @@ const Navbar = () => {
               <ThemeToggle />
             </motion.div>
             
-            <motion.button
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center space-x-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-200 shadow-md hover:shadow-lg border border-primary/20"
             >
-              <Wallet className="w-4 h-4" />
-              <span>Connect Wallet</span>
-            </motion.button>
+              <WalletButton />
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}
@@ -175,7 +183,7 @@ const Navbar = () => {
             className="md:hidden bg-background/98 backdrop-blur-lg border-t border-border shadow-lg"
           >
             <div className="px-4 pt-4 pb-6 space-y-2">
-              {navigation.map((item, index) => (
+              {currentNavigation.map((item, index) => (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}
@@ -214,13 +222,9 @@ const Navbar = () => {
                 transition={{ delay: 0.4 }}
                 className="pt-4 border-t border-border"
               >
-                <button
-                  className="flex items-center space-x-3 w-full bg-primary text-primary-foreground px-3 py-3 rounded-lg text-base font-medium hover:bg-primary/90 transition-all duration-200 shadow-md border border-primary/20"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Wallet className="w-5 h-5" />
-                  <span>Connect Wallet</span>
-                </button>
+                <div className="flex justify-center">
+                  <WalletButton />
+                </div>
               </motion.div>
             </div>
           </motion.div>
