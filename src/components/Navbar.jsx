@@ -6,7 +6,7 @@ const Navbar = () => {
   const location = useLocation()
 
   const navigation = [
-    { name: 'Home', href: '/', current: location.pathname === '/' },
+    { name: 'Home', href: '/landing', current: location.pathname === '/' },
     { name: 'Features', href: '#features', current: false },
     { name: 'About', href: '/about', current: location.pathname === '/about' },
     { name: 'Contact', href: '/contact', current: location.pathname === '/contact' },
@@ -57,8 +57,8 @@ const Navbar = () => {
               ))}
               
               {/* CTA Button */}
-              <button className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-                Get Started
+              <button className="bg-black text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-neutral-900 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
+                Connect Wallet
               </button>
             </div>
           </div>

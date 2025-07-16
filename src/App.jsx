@@ -9,6 +9,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Undermaintenance />} />
+          <Route path="/landing" element={<LandingPage />} />
         </Routes>
       </div>
     </Router>
